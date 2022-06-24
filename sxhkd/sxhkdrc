@@ -1,0 +1,84 @@
+alt + XF86AudioLowerVolume
+	~/.scripts/vol-set.sh $(~/.scripts/vol-add.sh -1) && dunstify -h string:x-dunst-stack-tag:volume "vol: $(~/.scripts/vol-add.sh)% $(~/.scripts/vol-mute-status.sh)" -u low
+alt + XF86AudioRaiseVolume
+	~/.scripts/vol-set.sh $(~/.scripts/vol-add.sh 1) && dunstify -h string:x-dunst-stack-tag:volume "vol: $(~/.scripts/vol-add.sh)% $(~/.scripts/vol-mute-status.sh)" -u low
+alt + XF86AudioMute
+	~/.scripts/vol-mute-toggle.sh && dunstify -h string:x-dunst-stack-tag:volume "vol: $(~/.scripts/vol-add.sh)% $(~/.scripts/vol-mute-status.sh)" -u low
+XF86AudioLowerVolume
+	~/.scripts/vol-set.sh $(~/.scripts/vol-add.sh -5) && dunstify -h string:x-dunst-stack-tag:volume "vol: $(~/.scripts/vol-add.sh)% $(~/.scripts/vol-mute-status.sh)" -u low
+XF86AudioRaiseVolume
+	~/.scripts/vol-set.sh $(~/.scripts/vol-add.sh 5) && dunstify -h string:x-dunst-stack-tag:volume "vol: $(~/.scripts/vol-add.sh)% $(~/.scripts/vol-mute-status.sh)" -u low
+XF86AudioMute
+	~/.scripts/vol-set.sh 0 && dunstify -h string:x-dunst-stack-tag:volume "vol: $(~/.scripts/vol-add.sh)% $(~/.scripts/vol-mute-status.sh)" -u low
+super + shift + s
+	/bin/openProgressTracker
+
+super + shift + q
+	~/.scripts/xinit-kill.sh
+super + s
+	~/.scripts/status-get.sh
+
+alt + shift + i
+	xmodmap ~/Documents/keybinds/.xmodmap-standard & dunstify -h string:x-dunst-stack-tag:keyboard "keyboard: standard" -u low
+alt + shift + j
+	xmodmap ~/Documents/keybinds/.xmodmap-number & dunstify -h string:x-dunst-stack-tag:keyboard "keyboard: numberpad" -u low 
+alt + shift + h
+	xmodmap ~/Documents/keybinds/.xmodmap-arrow & dunstify -h string:x-dunst-stack-tag:keyboard "keyboard: arrow" -u low 
+alt + shift + o
+	xmodmap ~/Documents/keybinds/.xmodmap-colonswap & dunstify -h string:x-dunst-stack-tag:keyboard "keyboard: weird" -u low
+
+
+ctrl + shift + h	
+	~/.scripts/mouse-left.sh
+ctrl + shift + j	
+	~/.scripts/mouse-down.sh
+ctrl + shift + k
+	~/.scripts/mouse-up.sh
+ctrl + shift + l
+	~/.scripts/mouse-right.sh
+grave ; {grave,1,2}
+	xdotool click {1,2,3}
+alt + e
+	xdotool click 5
+alt + q
+	xdotool click 4
+alt + shift + f
+	xset r rate 200 251 & xmodmap ~/keybinds/.xmodmap-standard
+
+alt + shift + g
+	xset r rate 660 25 & xmodmap ~/keybinds/.xmodmap-standard
+
+super + e
+	~/.scripts/line-from-list.sh ~/Documents/script-lists/emojis.txt | xclip -selection clipboard && xdotool keydown ctrl key v keyup ctrl
+
+super + q
+	~/.scripts/quick-kill.sh
+
+Print
+	scrot ~/Pictures/scrot/scrot.png
+
+super + Print
+	xfce4-screenshooter
+
+super + r
+	~/.scripts/run-script.sh
+
+super + shift + n
+	~/.scripts/take-note.sh
+
+# window manager hacks
+super + shift + alt + Return
+	~/.scripts/open-term-in-cwd.sh
+	
+super + shift + h
+	~/.scripts/window-hide.sh
+super + alt + shift + h
+	~/.scripts/window-show.sh
+
+ctrl + super + alt + shift + x
+	kill -9 $(xdotool getwindowfocus getwindowpid)
+
+super + shift + f
+	~/.scripts/yt-search.sh
+super + shift + l
+	~/.scripts/word-lookup.sh

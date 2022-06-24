@@ -1,0 +1,7 @@
+{
+	"coc.source.vimtex.filetypes": [
+    "tex",
+    "plaintext"
+  ],
+	"coc.source.vimtex.enable": true
+}
