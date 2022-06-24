@@ -13,8 +13,6 @@ XF86AudioMute
 super + shift + s
 	/bin/openProgressTracker
 
-super + shift + q
-	~/.scripts/xinit-kill.sh
 super + s
 	~/.scripts/status-get.sh
 
@@ -43,10 +41,10 @@ alt + e
 alt + q
 	xdotool click 4
 alt + shift + f
-	xset r rate 200 251 & xmodmap ~/keybinds/.xmodmap-standard
+	xset r rate 200 251
 
 alt + shift + g
-	xset r rate 660 25 & xmodmap ~/keybinds/.xmodmap-standard
+	xset r rate 660 25
 
 super + e
 	~/.scripts/line-from-list.sh ~/Documents/script-lists/emojis.txt | xclip -selection clipboard && xdotool keydown ctrl key v keyup ctrl
@@ -78,7 +76,5 @@ super + alt + shift + h
 ctrl + super + alt + shift + x
 	kill -9 $(xdotool getwindowfocus getwindowpid)
 
-super + shift + f
-	~/.scripts/yt-search.sh
 super + shift + l
 	~/.scripts/word-lookup.sh
